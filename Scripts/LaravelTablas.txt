@@ -1,0 +1,57 @@
+//Comandos para crear las migraciones
+
+php artisan make:migration crear_tabla_pokemon --create=pokemon
+php artisan make:migration crear_tabla_tipoPokemon --create=tipoPokemon
+php artisan make:migration crear_tabla_region --create=region
+php artisan make:migration crear_tabla_ataqueRapido --create=ataqueRapido
+php artisan make:migration crear_tabla_ataqueCargado --create=ataqueCargado
+php artisan make:migration crear_tabla_ventaja --create=ventaja
+php artisan make:migration crear_tabla_resistecia --create=resistencia
+
+//comando para crear las tablas mediante las migraciones
+
+php artisan migrate
+
+//Comandos para crear seeders
+
+php artisan make:seeder PokemonSeeder
+php artisan make:seeder TipoPokemonSeeder
+php artisan make:seeder RegionSeeder
+php artisan make:seeder AtaqueRapidoSeeder
+php artisan make:seeder AtaqueCargadoSeeder
+php artisan make:seeder VentejaSeeder
+php artisan make:seeder ResisteciaSeeder
+
+//Comando para rellenar las tablas mediante los Seeds
+
+php artisan db:seed
+
+//Combinación entre los comandos php artisan migrate y php artisan db:seed.
+
+php artisan migrate --seed
+
+//Combinación entre los comandos php artisan migrate:refresh y php artisan db:seed.
+
+php artisan migrate:refresh --seed
+
+//Comandos para crear los modelos
+
+php artisan make:model Empresa
+php artisan make:model Oferta
+php artisan make:model Grado
+php artisan make:model Departamento
+php artisan make:model Curritulum
+php artisan make:model OfertaSolicitada
+php artisan make:model TituloGrado
+php artisan make:model Usuario
+
+//Comandos para crear los controladores
+
+php artisan make:controller UsuariosController
+php artisan make:controller EmpresasController
+php artisan make:controller OfertasController
+php artisan make:controller GradosController
+php artisan make:controller DepartamentosController
+php artisan make:controller CurriculumsController
+php artisan make:controller OfertaSolicitadaController
+php artisan make:controller TituloGradosController
