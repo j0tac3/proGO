@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TipoPokemonSeeder extends Seeder
+class TipoSeeder extends Seeder
 {
     /**
      * Run the database seeds.

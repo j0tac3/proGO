@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaTipoPokemon extends Migration
+class CrearTablaTipo extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CrearTablaTipoPokemon extends Migration
      */
     public function up()
     {
-        Schema::create('tipoPokemon', function (Blueprint $table) {
+        Schema::create('tipo', function (Blueprint $table) {
             $table->increments('typeID');
             $table->string('typeName',50);
             $table->timestamps();
@@ -27,6 +27,6 @@ class CrearTablaTipoPokemon extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipoPokemon');
+        Schema::dropIfExists('tipo');
     }
 }
