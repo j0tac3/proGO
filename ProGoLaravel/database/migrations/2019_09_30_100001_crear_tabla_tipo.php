@@ -14,9 +14,14 @@ class CrearTablaTipo extends Migration
     public function up()
     {
         Schema::create('tipo', function (Blueprint $table) {
-            $table->increments('typeID');
+            //$table->engine = 'InnoDB';
+            // Definicion de las columnas
+            $table->bigIncrements('typeID');
             $table->string('typeName',50);
             $table->timestamps();
+            // Restricciones de la tabla
+            //$table->primary('typeID');
+            $table->unique('typeName');
         });
     }
 

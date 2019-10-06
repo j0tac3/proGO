@@ -14,13 +14,19 @@ class CrearTablaAtaqueCargado extends Migration
     public function up()
     {
         Schema::create('ataqueCargado', function (Blueprint $table) {
+            //$table->engine = 'InnoDB';
+            // Definicion de las columnas
             $table->increments('loadAttackID');
             $table->string('attackName',50);
-            $table->integer('attackType');
+            $table->bigInteger('attackType')->unsigned();
             $table->integer('danioPVP');
             $table->integer('danioNormal');
             $table->integer('speed');
             $table->timestamps();
+            // Restricciones de la tabla
+            //$table->primary('loadAttackID');
+            $table->foreign('attackType')->references('typeID')->on('tipo');
+            $table->unique('attackName');
         });
     }
 

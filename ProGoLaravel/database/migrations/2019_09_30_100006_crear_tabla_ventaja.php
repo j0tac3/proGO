@@ -14,10 +14,16 @@ class CrearTablaVentaja extends Migration
     public function up()
     {
         Schema::create('ventaja', function (Blueprint $table) {
-            $table->integer('typeAdvantage');
-            $table->integer('typeDisavantage');
+            $table->engine = 'InnoDB';
+            // Definicion de las tablas
+            $table->bigInteger('typeAdvantage')->unsigned();
+            $table->bigInteger('typeDisavantage')->unsigned();
             $table->integer('damageFor');
             $table->timestamps();
+            // Restricciones de la tabla
+            $table->primary(['typeAdvantage','typeDisavantage']);
+            $table->foreign('typeAdvantage')->references('typeID')->on('tipo');
+            $table->foreign('typeDisavantage')->references('typeID')->on('tipo');
         });
     }
 

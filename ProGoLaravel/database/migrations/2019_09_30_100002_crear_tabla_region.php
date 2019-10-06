@@ -14,9 +14,14 @@ class CrearTablaRegion extends Migration
     public function up()
     {
         Schema::create('region', function (Blueprint $table) {
-            $table->increments('regionID');
+            //$table->engine = 'InnoDB';
+            // Definicion de las columnas
+            $table->bigIncrements('regionID');
             $table->string('regionName',50);
             $table->timestamps();
+            // Restricciones de la tabla
+            //$table->primary('regionID');
+            $table->unique('regionName');
         });
     }
 

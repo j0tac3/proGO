@@ -18,7 +18,7 @@
                 @include('partials.nav')  
             @show
 
-                @yield('body')
+            @yield('body')
 
             @section('footer')
                 @include('partials.footer')
